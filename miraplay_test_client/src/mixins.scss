@@ -1,0 +1,33 @@
+@mixin flex-container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-container-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin transition-03s-linear {
+    transition: all 0.3s linear;
+}
+
+@mixin border-1 {
+    border: 1px solid $border-color;
+}
+
+@mixin border-rounded-10 {
+    border-radius: 10px;
+}
+
+@mixin border-rounded-20 {
+    border-radius: 20px;
+}
+
+@mixin btn-active {
+    background: $main-green-color;
+    border: 1px solid $main-green-color;
+    box-shadow: 0 0 10px $main-green-color;
+}

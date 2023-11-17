@@ -1,0 +1,88 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        max-width: 900px;
+    }
+
+    &__sort {
+        position: relative;
+        display: flex;
+        gap: 40px;
+
+        height: 100%;
+
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 143%;
+
+        color: $second-text-color;
+
+        &-item {
+            @include flex-container-center;
+            @include transition-03s-linear;
+            gap: 10px;
+
+            min-width: 100px;
+
+            text-align: center;
+            color: $main-text-color;
+
+            cursor: pointer;
+
+            & > svg {
+                width: 10px;
+                height: 10px;
+
+                margin-bottom: 4px;
+            }
+
+            &:hover {
+                color: $main-green-color;
+            }
+        }
+
+        &-select {
+            @include border-1;
+
+            position: absolute;
+            right: 5%;
+            top: 30px;
+
+            padding: 10px;
+            border-radius: 25px;
+            background: $input-bg-color;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .filters {
+        align-items: center;
+
+        &__sort {
+            gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .filters {
+        flex-direction: column-reverse;
+        
+
+        &__sort {
+            gap: 20px;
+        }
+    }
+}
+

@@ -1,0 +1,190 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.profile {
+    &__left {
+        position: fixed;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 40px;
+
+        &-item {
+            @include flex-container-between;
+            gap: 10px;
+
+            & > span {
+                color: $second-text-color;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 40px;
+
+        width: 60%;
+        margin-left: 40%;
+        padding: 35px;
+    }
+
+    &__form-title {
+        margin-bottom: 15px;
+        color: $second-text-color;
+        text-align: right;
+    }
+}
+
+.form__create {
+    max-width: 400px;
+}
+
+.form__name > label {
+    text-align: end;
+}
+
+.form__update {
+    &-email {
+        @include flex-container-between;
+        gap: 40px;
+
+        & > label {
+            text-align: end;
+
+            & > span {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.form__profile-submit {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.form__profile-btn {
+    width: 130px;
+}
+
+@media (max-width: 1100px) {
+    .profile {
+        &__title {
+            text-align: right;
+        }
+
+        &__left {
+            position: static;
+            padding-right: 32px;
+
+            &-item {
+                padding-left: 60%;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .profile {
+        &__title {
+            text-align: right;
+        }
+
+        &__left {
+            position: static;
+
+            &-item {
+                padding-left: 45%;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .profile {
+        &__title {
+            text-align: center;
+        }
+
+        &__left {
+            position: static;
+
+            &-item {
+                padding-left: 32px;
+            }
+        }
+
+        &__right {
+            width: 100%;
+            margin-left: 0;
+            padding: 35px;
+        }
+
+        &__form-title {
+            text-align: center;
+        }
+    }
+
+    .form__create {
+    max-width: 400px;
+}
+
+.form__name > label {
+    text-align: center;
+}
+
+.form__update {
+        width: 100%;
+
+    &-email {
+        @include flex-container-between;
+        flex-direction: column;
+        gap: 0;
+
+        & > label {
+            text-align: center;
+
+            & > span {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.form__create {
+    width: 100%;
+    max-width: 100%;
+}
+
+.form__profile-btn {
+    width: 100%;
+}
+}
+
+
+@media (max-width: 500px) {
+    .profile {
+        &__title {
+            text-align: right;
+        }
+
+        &__left {
+            position: static;
+            padding: 0;
+
+            &-item {
+                padding: 0;
+            }
+        }
+
+        &__right {
+            width: 100%;
+            margin-left: 0;
+            padding: 5px;
+        }
+    }
+}

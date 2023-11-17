@@ -1,0 +1,116 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.user__icon {
+    position: relative;
+}
+
+.userMenu {
+    @include border-rounded-10;
+
+    position: absolute;
+    top: 65px;
+    right: 0;
+    z-index: 150;
+
+    background-color: $heder-color;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+
+    &__item {
+        width: 100%;
+
+        padding: 0 20px;
+
+        &-icon {
+            @include flex-container-center;
+
+            width: 40px;
+            height: 20px;
+
+            color: $main-text-color;
+        }
+
+        &:hover {
+            background: linear-gradient(270deg, rgba(158, 61, 90, 0.2), rgba(63, 156, 20, 0));
+        }
+        &:focus-within {
+            background: linear-gradient(270deg, rgba(158, 61, 90, 0.2), rgba(63, 156, 20, 0));
+        }
+
+        &:first-child {
+            margin-bottom: 15px;
+        }
+
+        &:last-child {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__link {
+        @include flex-container-between;
+        gap: 20px;
+
+        width: 100%;
+        padding: 10px 0;
+
+        background: transparent;
+        border: none;
+
+        outline: none;
+
+        &:hover {
+            color: $main-green-color;
+        }
+        &:focus-within {
+            color: $main-green-color;
+        }
+    }
+
+    &__name {
+        @include flex-container-between;
+        position: relative;
+        gap: 20px;
+
+        padding: 20px;
+        margin-bottom: 15px;
+
+        outline: none;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+
+            content: "";
+
+            width: 80%;
+            height: 1px;
+
+            background: $border-color;
+        }
+
+        &-icon {
+            @include flex-container-center;
+            @include transition-03s-linear;
+            @include border-1;
+
+            width: 40px;
+            height: 40px;
+
+            padding-top: 5px;
+
+            border-radius: 100%;
+            color: $main-green-color;
+        }
+    }
+
+    &__profile {
+        outline: none;
+    }
+
+    &__logout {
+        cursor: pointer;
+        color: $main-text-color;
+    }
+}

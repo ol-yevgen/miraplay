@@ -1,0 +1,39 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.search {
+    position: relative;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    &__input {
+        @include border-rounded-10;
+        @include border-1;
+
+        width: 100%;
+        height: 56px;
+
+        padding: 0 40px 0 20px;
+
+        outline: none;
+        color: $main-text-color;
+        background: transparent;
+
+        &:focus {
+            border-color: $main-green-color;
+        }
+
+        &::placeholder {
+            color: $second-text-color;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        right: 6%;
+        top: 32%;
+    }
+}

@@ -1,0 +1,35 @@
+.auth {
+    @include flex-container-center;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 550px;
+    margin: 0 auto;
+
+    &__title {
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        color: $second-text-color;
+    }
+
+    &__form {
+        @include flex-container-between;
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 40px;
+
+        &-login {
+            padding-bottom: 100px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .auth__form-login {
+        padding-bottom: 0;
+    }
+}

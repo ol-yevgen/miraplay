@@ -1,0 +1,132 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+
+    color: $main-text-color;
+    background: $main-bg-color;
+
+    scroll-behavior: smooth;
+
+    cursor:
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABIFBMVEUAAAA/nBM+nRQ/nBM+nRQ/nhQ/nBM/nBQ/nBM/nBM+nRM/mxOAgAA/nBNAnyA/nBNVqgA/nBM/nBM+nBM/nBNAnBU/nBM/nBM/nBNCnRM/nBI+nRM/nBNDmxY/mxQ5nA4/nRI+nhI/nRM/nBNGohc/nBNEmRE9nBI/mxNBnBQ/nRNCoRM+mxI9mRQ+mxZAnBM/nRVBnRE/nBRCnBBAnRQ/nBM+nBQ/nREAgAA7mRE/nBIzmQBAgAAA/wBJkgA5qhxBnRBEmRE/mxI6lxc5jhxAnwA9mxM9nBNAmQ07nRQ8lg8/nBNNmRo/nBNAlxg+nxdBnhNAmxI8mxQ/nRE/nRNCnhRDmhQ+mw9BmxRBnxU/nBM+mxdCnRI/nBNAmxNVqgDgTb8WAAAAYHRSTlMA/3/VgH78jv73Xq4CrQjsA7bOeeUkldz0QsFx4BdhEqcdkYQLah5HvVueG1QZOohuO9EfWfl7aAIemgUEAQcJLw+KFgkITzYUJxHYCvAgLTccM0mrMiYhM0qiIUbjpAZfxj6dAAABD0lEQVR4nFXQ5XLDMAwAYMuBhZosSQPlrrAyrDhmZuZu7/8Wk+3ebtMf6z5JJmI3SkbwTf7HWxLii6/87uVfNGLA0LKuf3L6izcRmqqiO+n9z84GRzsBMJtkitEYi1eDcPSyhVoFKBFyFIyano6uSwbiaxLWF9mM1Zo6bH/XJmSvDoM1sf92nZ3ZYy1l0B8EXnuI7zmWpmLocVt+VEEzWzy/8yB9juvQxD6pLYasEJwV7OO20D8Q2tAh7DzjfdEUBessgiyMpQgfhUblfIXjTpFdTxil/plonWIXaMKofMyfQp5miGa7r8gyYmaJY8UFSAxJrmv4jFNi/rZZ5uXDj1p1QmvzX9205slq4b5b+AFOBBoRor9LTgAAAABJRU5ErkJggg==)
+            2 2,
+        pointer;
+}
+
+body {
+    max-width: 1170px;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+    line-height: 1.5;
+    font-family: "Neue Machina", sans-serif;
+    background: $main-bg-color;
+}
+
+html,
+body {
+    scrollbar-color: $main-green-color transparent;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $main-green-color;
+}
+
+ul,
+li,
+dl {
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+
+    transition: all 0.4s ease-in;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+.main {
+    margin-top: 90px;
+    padding: 30px 20px;
+
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+@import "./pages/AuthPage/authPage.scss";
+@import "./components/UI//Button/button.scss";

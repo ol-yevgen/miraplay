@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: 400;
+    src: local('Neue Machina'), url(./NeueMachina-Regular.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: 300;
+    src: local('Neue Machina'), url(./NeueMachina-Light.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: 500;
+    src: local('Neue Machina'), url(./NeueMachina-Medium.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: 700;
+    src: local('Neue Machina'), url(./NeueMachina-Bold.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: 800;
+    src: local('Neue Machina'), url(./NeueMachina-Ultrabold.woff2) format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: 900;
+    src: local('Neue Machina'), url(./NeueMachina-Black.woff2) format('woff2');
+    font-display: swap;
+}

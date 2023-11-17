@@ -68,8 +68,8 @@ export const login = async (req: RegisterUserBody, res: Response, next: NextFunc
                 {
                     accessToken,
                     userInfo: {
-                        role: user.role,
                         userId: user._id,
+                        nickName: user.nickName,
                         userName: user.firstName + ' ' + user.lastName,
                     },
                     message: `Welcome, ${user.firstName}`

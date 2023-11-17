@@ -1,0 +1,42 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.selector {
+    position: relative;
+
+    &__list {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        z-index: 50;
+
+        width: 150px;
+        padding: 10px 0;
+
+        background: $heder-color;
+        background-color: $heder-color;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+
+        overflow: hidden;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 0 25px;
+
+        &:hover {
+            background: linear-gradient(270deg, rgba(158, 61, 90, 0.2), rgba(63, 156, 20, 0));
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .selector {
+        width: 100%;
+
+        &__list {
+            width: 100%;
+        }
+    }
+}

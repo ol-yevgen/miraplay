@@ -1,0 +1,54 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.logo {
+    position: relative;
+    max-width: 50px;
+    color: $main-text-color;
+
+    &__icon {
+        width: 0;
+        height: 0;
+        border-top: 25px solid transparent;
+        border-left: 50px solid $main-green-color;
+        border-bottom: 25px solid transparent;
+
+        border-radius: 8px;
+
+        &-inner {
+            position: absolute;
+            top: 18%;
+            left: 15%;
+
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-left: 25px solid $main-bg-color;
+            border-bottom: 15px solid transparent;
+
+            border-radius: 15px;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 800;
+
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    &__info {
+        font-size: 14px;
+        font-weight: 300;
+
+        line-height: 14px;
+        color: $second-text-color;
+    }
+}

@@ -1,0 +1,16 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.spinner {
+    @include flex-container-center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+    width: 100vw;
+    min-height: 100vh;
+
+    background: #0000006f;
+
+}

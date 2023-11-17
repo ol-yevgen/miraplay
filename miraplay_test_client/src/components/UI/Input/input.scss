@@ -1,0 +1,85 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.form {
+
+    &__name {
+        display: flex;
+        gap: 20px;
+
+    }
+
+    &__label {
+        position: relative;
+
+        display: block;
+        min-width: 265px;
+        width: 100%;
+
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        @include border-rounded-10;
+        @include border-1;
+
+        display: block;
+        // min-width: 320px;
+
+        width: 100%;
+        padding: 20px;
+        margin: 15px 0 40px 0;
+
+        font-size: 16px;
+        font-weight: 300;
+
+        color: $main-text-color;
+        background: $input-bg-color;
+
+        outline: none;
+
+        &:focus {
+            border-color: $main-green-color;
+        }
+
+        &-error {
+            border-color: $error-color;
+        }
+
+        &-hide {
+            position: absolute;
+            right: 3%;
+            top: 39%;
+            
+            background: none;
+            border: none;
+
+            & > svg {
+                @include transition-03s-linear;
+                
+                width: 2em;
+                height: 2em;
+
+                &:hover {
+                    fill: $main-green-color;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $main-green-color;
+
+                
+            }
+        }
+    }
+
+    &__error {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+        color: $error-color;
+    }
+}

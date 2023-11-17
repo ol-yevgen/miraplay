@@ -1,0 +1,160 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.footer {
+    width: 100%;
+    padding: 65px 0;
+
+    color: $second-text-color;
+    background: radial-gradient(ellipse at 50% 200%, #3f9c142e, $main-bg-color 70%);
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+
+    &__list {
+        display: flex;
+
+        flex-direction: column;
+        gap: 16px;
+
+        &-link {
+            @include transition-03s-linear;
+
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 143%;
+            letter-spacing: 0.03em;
+
+            &:hover {
+                color: $main-green-color;
+            }
+        }
+
+        &-title {
+            padding-top: 5px;
+            margin-bottom: 15px;
+
+            font-weight: 800;
+            line-height: 188%;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: $main-text-color;
+        }
+    }
+
+    &__item {
+        font-weight: 300;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+    }
+
+    &__first {
+        &-payment {
+            display: flex;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        &-pay {
+            width: 45px;
+            max-height: 35px;
+        }
+
+        &-social {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &:hover {
+            color: $main-green-color;
+        }
+
+        &-icon {
+            @include flex-container-center;
+            @include border-rounded-10;
+
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+
+            color: $main-text-color;
+            background: $main-green-color;
+        }
+
+        &-client {
+            @include transition-03s-linear;
+
+            color: $main-text-color;
+
+            font-weight: 800;
+            text-transform: uppercase;
+
+            &:hover {
+                color: $main-green-color;
+            }
+        }
+
+        & > span {
+            display: block;
+            font-size: 14px;
+        }
+    }
+
+    &__copyrighting-mobile {
+        display: none;
+    }
+
+    & svg {
+    width: 20px;
+    height: 20px;
+}
+}
+
+.social {
+    @include flex-container-center;
+
+    &:hover {
+        color: $main-green-color;
+    }
+
+    // & > svg {
+    //     width: 20px;
+    //     height: 20px;
+    // }
+}
+
+@media (max-width: 900px) {
+    .footer {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__copyrighting {
+            display: none;
+
+            &-mobile {
+                @include flex-container-center;
+
+                padding-top: 20px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .footer__wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
