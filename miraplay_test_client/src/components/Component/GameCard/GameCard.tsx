@@ -1,5 +1,6 @@
 import { electronicIcon, wargamingIcon, steamIcon, battleNetIcon, epicIcon } from 'assets/icons/icons'
-import { lazy, useEffect, useState } from 'react'
+import useOutsideClickListener from 'hooks/useOutsideClickListener'
+import { lazy, useEffect, useRef } from 'react'
 import { IGameTypes } from 'types/Types'
 import './gameCard.scss'
 
@@ -10,25 +11,27 @@ interface IProps {
 }
 
 export default function GameCard({ data }: IProps) {
-    const [modal, setModal] = useState(false)
+    const modalRef = useRef<HTMLDivElement>(null)
+
+    const { isShow, setIsShow } = useOutsideClickListener(modalRef)
 
     useEffect(() => {
         const header = document.querySelector('.header') as Element
 
-        if (modal) {
+        if (isShow) {
             header.classList.add('header__hide');
         }
 
         return () => {
             header.classList.remove('header__hide');
         };
-    }, [modal])
+    }, [isShow])
 
     return (
         <>
             <li
                 className='card'
-                onClick={() => setModal(true)}
+                onClick={() => setIsShow(true)}
             >
                 <img
                     src={data.gameImage}
@@ -78,9 +81,10 @@ export default function GameCard({ data }: IProps) {
                 </ul>
             </li>
 
-            {modal && <SingleGamePage
+            {isShow && <SingleGamePage
                 gameData={data}
-                setModal={setModal}
+                setIsShow={setIsShow}
+                modalRef={modalRef}
             />}
             
         </>

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, RefObject, SetStateAction, useEffect, useRef, useState } from 'react'
 import './SingleGamePage.scss'
 import { Logo } from 'components';
 import { windowIcon, appleIcon, triangleIcon } from 'assets/icons/icons';
@@ -6,10 +6,12 @@ import { IGameTypes } from 'types/Types';
 
 interface IGameProps {
     gameData: IGameTypes,
-    setModal: Dispatch<SetStateAction<boolean>>
+    setIsShow: Dispatch<SetStateAction<boolean>>
+    modalRef: RefObject<HTMLDivElement>
 }
 
-export default function SingleGamePage({ gameData, setModal }: IGameProps) {
+export default function SingleGamePage({ gameData, setIsShow, modalRef }: IGameProps) {
+
     const [isVideo, setIsVideo] = useState<string>('video')
 
     useEffect(() => {
@@ -24,11 +26,12 @@ export default function SingleGamePage({ gameData, setModal }: IGameProps) {
         <section className='game'>
             <button
                 className='game__close'
-                onClick={() => setModal(false)}
+                onClick={() => setIsShow(false)}
             >
                 +
             </button>
-            <div className='container game__container'>
+            <div className='container game__container' ref={modalRef}>
+
                 <div className='game__logo'>
                     <Logo />
                 </div>
@@ -79,7 +82,7 @@ export default function SingleGamePage({ gameData, setModal }: IGameProps) {
                             {appleIcon}
                             download client
                         </button>
-                        {true && <p className='game__top card__top-item card__top-first'>TOP</p>}
+                        {gameData.inTop && <p className='game__top card__top-item card__top-first'>TOP</p>}
                     </div>
                     <div className='game__right'>
                         <div className='game__video'>
