@@ -91,6 +91,15 @@
         }
     }
 
+    &__game {
+        width: 100%;
+        padding: 30px 0;
+        margin: 32px 0;
+
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
     &:hover {
         @include btn-active;
     }
@@ -102,7 +111,8 @@
 
     &:disabled {
         color: $second-text-color;
-        background: #3f9c145f;
+        background: $disabled-bg;
+;
     }
 }
 

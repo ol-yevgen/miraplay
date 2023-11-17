@@ -127,6 +127,9 @@ section {
     padding: 0 20px;
 }
 
+.scrollOff {
+    overflow: hidden;
+}
 
 @import "./pages/AuthPage/authPage.scss";
 @import "./components/UI//Button/button.scss";

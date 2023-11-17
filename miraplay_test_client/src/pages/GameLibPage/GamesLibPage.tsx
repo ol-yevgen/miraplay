@@ -13,7 +13,7 @@ export default function GamesLibPage() {
     const data = useAppSelector((state) => state.gamesState.gamesReq) as IGamesListTypes
     const { activeFilter, sort } = useAppSelector((state) => state.activeFilterState) as IActiveFilterState
 
-    const [gamesRequest, { isLoading}] = useGamesRequestMutation()
+    const [gamesRequest, { isLoading }] = useGamesRequestMutation()
 
     const [page, setPage] = useState<number>(1)
 
