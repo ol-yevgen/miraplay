@@ -27,8 +27,16 @@
         }
     }
 }
+@media (max-width: 700px) {
+    .form__name {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
 
 @media (max-width: 500px) {
+    
     .auth__form-login {
         padding-bottom: 0;
     }
