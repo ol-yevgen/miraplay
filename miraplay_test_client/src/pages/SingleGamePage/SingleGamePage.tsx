@@ -4,6 +4,8 @@ import { Logo } from 'components';
 import { windowIcon, appleIcon, triangleIcon } from 'assets/icons/icons';
 import { IGameTypes } from 'types/Types';
 
+import YouTubePlayer from 'components/Component/YouTubeVideo/YouTubeVideo';
+
 interface IGameProps {
     gameData: IGameTypes,
     isShow: boolean,
@@ -100,8 +102,9 @@ export default function SingleGamePage({ gameData, isShow, setIsShow, modalRef }
                     <div className='game__right'>
                         <div className='game__video'>
                             {isVideo === 'video'
-                                ? <iframe frameBorder="0" allowFullScreen={true} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Origin Access Premier: Official Reveal Trailer, EA PLAY 2018" width="100%" height="100%" src={gameData.gameVideoUrl} id="widget2" data-gtm-yt-inspected-7="true">
-                                </iframe>
+                                ? <YouTubePlayer videoUrl={gameData.gameVideoUrl} />
+                                // <iframe frameBorder="0" allowFullScreen={true} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Origin Access Premier: Official Reveal Trailer, EA PLAY 2018" width="100%" height="100%" src={gameData.gameVideoUrl} id="widget2" data-gtm-yt-inspected-7="true">
+                                // </iframe>
                                 : <div className='game__pictures'>
                                     {gameData.gameImages.length !== 0
                                         ? <>

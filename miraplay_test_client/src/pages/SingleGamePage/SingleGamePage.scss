@@ -210,6 +210,12 @@
         @include border-rounded-10;
         flex: 1 1 auto;
         overflow: hidden;
+
+        & > div > div > iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
     }
 
     &__action {
@@ -318,11 +324,19 @@
 @media (max-width: 700px) {
     .game__video {
         height: 300px;
+
+        & > div > div > iframe {
+            min-height: 300px;
+        }
     }
 }
 
 @media (max-width: 700px) {
     .game__video {
         height: 200px;
+        
+        & > div > div > iframe {
+            min-height: 200px;
+        }
     }
 }
