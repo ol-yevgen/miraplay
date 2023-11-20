@@ -6,13 +6,26 @@ import { IGameTypes } from 'types/Types';
 
 interface IGameProps {
     gameData: IGameTypes,
+    isShow: boolean,
     setIsShow: Dispatch<SetStateAction<boolean>>
     modalRef: RefObject<HTMLDivElement>
 }
 
-export default function SingleGamePage({ gameData, setIsShow, modalRef }: IGameProps) {
+export default function SingleGamePage({ gameData, isShow, setIsShow, modalRef }: IGameProps) {
 
     const [isVideo, setIsVideo] = useState<string>('video')
+
+    useEffect(() => {
+        const header = document.querySelector('.header') as Element
+
+        if (isShow) {
+            header.classList.add('header__hide');
+        }
+
+        return () => {
+            header.classList.remove('header__hide');
+        };
+    }, [isShow])
 
     useEffect(() => {
         document.body.classList.add('scrollOff');

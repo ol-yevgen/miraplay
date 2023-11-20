@@ -2,11 +2,43 @@
 @import "variables.scss";
 
 .search {
-    position: relative;
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
-    &.active {
-        display: block;
+    &__form {
+        position: relative;
+    }
+
+    &__notFound {
+        text-align: center;
+    }
+
+    &__results {
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        width: 100%;
+
+        @include border-rounded-10;
+
+        margin-top: 20px;
+        padding: 20px 0;
+
+        background: $heder-color;
+        box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
+
+        overflow-y: scroll;
+
+        &-item {
+            padding: 7px 20px;
+
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient(270deg, rgba(46, 48, 46, 0.5), rgba(76, 188, 20, 0.1) 100%);
+            }
+        }
     }
 
     &__input {
@@ -34,6 +66,47 @@
     &__icon {
         position: absolute;
         right: 6%;
-        top: 32%;
+        top: 16px;
+
+        background: transparent;
+        border: none;
+
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 700px) {
+    .form__name {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search {
+        &__form {
+            position: absolute;
+            top: 90px;
+            left: 0;
+
+            width: 100%;
+            padding: 20px;
+            margin: 0;
+
+            background: $heder-color;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        &__results {
+            position: static;
+            @include border-rounded-10;
+            @include border-1;
+
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+
+        &__icon {
+            top: 35px;
+        }
     }
 }

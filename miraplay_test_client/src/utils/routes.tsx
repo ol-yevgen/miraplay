@@ -6,6 +6,7 @@ import { lazy, memo } from 'react'
 
 const RegistrationPage = lazy(() => import('pages/AuthPage/RegistrationPage'))
 const ProfilePage = lazy(() => import('pages/ProfilePage/ProfilePage'))
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'))
 
 export const ProtectedRoutes = memo(() => {
     const { accessToken } = useAppSelector((state) => state.authState)
@@ -21,6 +22,10 @@ export const ProtectedRoutes = memo(() => {
                     path='/profile/:id'
                     element={<ProfilePage />}
                 />
+                {/* <Route
+                    path='*'
+                    element={<NotFoundPage />}
+                /> */}
                 <Route
                     path='*'
                     element={<Navigate to="/games_lib" replace />}

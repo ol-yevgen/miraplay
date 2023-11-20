@@ -15,18 +15,6 @@ export default function GameCard({ data }: IProps) {
 
     const { isShow, setIsShow } = useOutsideClickListener(modalRef)
 
-    useEffect(() => {
-        const header = document.querySelector('.header') as Element
-
-        if (isShow) {
-            header.classList.add('header__hide');
-        }
-
-        return () => {
-            header.classList.remove('header__hide');
-        };
-    }, [isShow])
-
     return (
         <>
             <li
@@ -83,6 +71,7 @@ export default function GameCard({ data }: IProps) {
 
             {isShow && <SingleGamePage
                 gameData={data}
+                isShow={isShow}
                 setIsShow={setIsShow}
                 modalRef={modalRef}
             />}

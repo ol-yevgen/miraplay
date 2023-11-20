@@ -1,0 +1,12 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.not__found {
+    @include flex-container-center;
+    flex-direction: column;
+    gap: 40px;
+
+
+    font-size: 48px;
+    height: calc(100vh - 90px);
+}

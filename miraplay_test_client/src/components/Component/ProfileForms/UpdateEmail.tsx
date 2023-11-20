@@ -2,11 +2,10 @@ import { Input, SubmitButton } from 'components'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { emailUpdateSchema } from 'schemas/profileSchema'
-import { useCreateNickNameMutation, useUpdateEmailsMutation } from 'redux/api/profileApi'
+import { useUpdateEmailsMutation } from 'redux/api/profileApi'
 import { errorToast, successToast } from 'utils/toast'
-import { useCallback, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useAppSelector } from 'redux/store'
-import { useParams } from 'react-router-dom'
 
 interface IUpdateEmailProps {
     currEmail: string
@@ -59,9 +58,6 @@ export default function UpdateEmail({ currEmail }: IUpdateEmailProps) {
             if (updateEmail.newEmail === currEmail) {
                 errorToast('This account is register on same email')
             }
-
-            console.log((updateEmail.oldEmail === currEmail) && (updateEmail.newEmail !== currEmail));
-
 
             if ((updateEmail.oldEmail === currEmail) && (updateEmail.newEmail !== currEmail)) {
 

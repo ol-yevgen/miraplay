@@ -4,7 +4,7 @@ import './logo.scss'
 export default function Logo() {
     return (
         <div className='logo'>
-            <Link to='/' className='logo__link'>
+            <Link to='/games_lib' className='logo__link'>
                 <div className='logo__icon'>
                 </div>
                 <div className='logo__icon-inner'></div>

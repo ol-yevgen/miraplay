@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IGamesListTypes, IReqBodyTypes } from 'types/Types'
-import { setGamesReq } from 'redux/features/gamesSlice'
+import { IGameTypes, IGamesListTypes, IReqBodyTypes } from 'types/Types'
+import { setGamesReq, allGames } from 'redux/features/gamesSlice'
 
 export const gameApi = createApi({
     reducerPath: 'gameApi',
@@ -8,6 +8,21 @@ export const gameApi = createApi({
         baseUrl: 'https://api.miraplay.cloud',
     }),
     endpoints: (builder) => ({
+
+        allGamesRequest: builder.query < IGameTypes[], {}>({
+            query() {
+                return {
+                    url: '/games',
+                    method: 'GET',
+                }
+            },
+            async onQueryStarted(args, { dispatch, queryFulfilled }) {
+                try {
+                    const { data } = await queryFulfilled
+                    dispatch(allGames(data as IGameTypes[]))
+                } catch (err) { }
+            }
+        }),
         gamesRequest: builder.mutation<IGamesListTypes, IReqBodyTypes>({
             query(data) {
                 return {
@@ -28,4 +43,5 @@ export const gameApi = createApi({
 
 export const {
     useGamesRequestMutation,
+    useLazyAllGamesRequestQuery,
 } = gameApi

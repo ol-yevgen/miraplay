@@ -1,6 +1,6 @@
 import { ProtectedRoutes } from "utils/routes"
 import { Header, Footer, Spinner } from "components";
-import { FC, memo, useEffect } from "react"
+import { FC, useEffect } from "react"
 import { ToastContainer } from 'react-toastify';
 import { useRefreshLoginQuery, useLogoutUserMutation } from "redux/api/authApi";
 import { Location, NavigateFunction, useLocation, useNavigate } from "react-router-dom";
